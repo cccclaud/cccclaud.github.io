@@ -71,16 +71,18 @@ section {
     animation: fadeInUp 1.5s ease-out;
 }
 
-section h2 {
+/* Animated Section Headers */
+.animated-section h2 {
     border-bottom: 3px solid #ff4081;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     color: #333;
     font-size: 2.5rem;
     position: relative;
+    animation: bounceIn 1s ease;
 }
 
-section h2::before {
+.animated-section h2::before {
     content: '';
     display: block;
     width: 0;
@@ -92,7 +94,7 @@ section h2::before {
     transition: width 0.4s ease;
 }
 
-section h2:hover::before {
+.animated-section h2:hover::before {
     width: 100%;
 }
 
@@ -101,94 +103,31 @@ section h2:hover::before {
     position: relative;
     height: 300px; /* Set height to contain animated images */
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gallery img {
-    position: absolute;
-    width: 100px;
+    width: 150px;
     height: auto;
     border: 5px solid #ff4081;
     border-radius: 12px;
-    animation: moveAround 10s infinite linear, fadeInOut 5s infinite alternate;
+    animation: float 4s ease-in-out infinite, fadeInOut 3s ease-in-out infinite;
     transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
-}
-
-.gallery img:nth-child(1) {
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.gallery img:nth-child(2) {
-    top: 20%;
-    right: 10%;
-    animation-delay: 2s;
-}
-
-.gallery img:nth-child(3) {
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation-delay: 4s;
-}
-
-.gallery img:nth-child(4) {
-    bottom: 20%;
-    right: 15%;
-    animation-delay: 6s;
+    margin: 0 1rem;
 }
 
 .gallery img:hover {
-    transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(5deg);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
     filter: brightness(1.2);
 }
 
-/* Game Section */
-#game {
-    padding: 3rem;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-#gameArea {
-    position: relative;
-    height: 400px;
-    width: 100%;
-    background: #ffeb3b;
-    border: 2px dashed #ff4081;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-#gameImage {
-    position: absolute;
-    width: 100px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#gameImage:hover {
-    transform: scale(1.2);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-#score {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ff4081;
-}
-
-/* Form Styles */
+/* Contact Form */
 form {
     display: grid;
     gap: 1.5rem;
-    animation: bounceIn 1s ease;
 }
 
 form label {
@@ -227,7 +166,7 @@ form button:hover {
 
 /* Footer */
 footer {
-    background: #ff4081;
+    background: rgba(255, 64, 129, 0.9); /* Semi-transparent pink */
     color: #fff;
     text-align: center;
     padding: 2rem 0;
@@ -250,7 +189,7 @@ footer {
 
 @keyframes textColorChange {
     0% {
-        color: #ff4081;
+        color: #fff;
     }
     100% {
         color: #ffeb3b;
@@ -270,65 +209,38 @@ footer {
 
 @keyframes bounceIn {
     0% {
-        transform: scale(0.3);
         opacity: 0;
+        transform: scale(0.5);
     }
     50% {
-        transform: scale(1.05);
         opacity: 1;
+        transform: scale(1.2);
     }
     100% {
         transform: scale(1);
     }
 }
 
-@keyframes moveAround {
+@keyframes float {
     0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(200px, 100px);
+        transform: translateY(0);
     }
     50% {
-        transform: translate(100px, 200px);
-    }
-    75% {
-        transform: translate(-100px, 100px);
+        transform: translateY(-20px);
     }
     100% {
-        transform: translate(0, 0);
+        transform: translateY(0);
     }
 }
 
 @keyframes fadeInOut {
     0% {
-        opacity: 0.5;
+        opacity: 0;
     }
-    100% {
+    50% {
         opacity: 1;
     }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-    
-    nav ul li {
-        margin: 0.5rem 0;
-    }
-    
-    .gallery {
-        height: auto; /* Adjust height for mobile */
-    }
-    
-    .gallery img {
-        max-width: 100%;
-        width: 80px; /* Adjust size for mobile */
-    }
-
-    #gameImage {
-        width: 80px;
+    100% {
+        opacity: 0;
     }
 }
