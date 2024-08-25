@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle at top right, #ffeb3b, #ff4081);
+    background: linear-gradient(to right, #ffeb3b, #ff4081);
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
@@ -142,6 +142,46 @@ section h2:hover::before {
     transform: scale(1.1) rotate(3deg);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
     filter: brightness(1.2);
+}
+
+/* Game Section */
+#game {
+    padding: 3rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#gameArea {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background: #ffeb3b;
+    border: 2px dashed #ff4081;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#gameImage {
+    position: absolute;
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gameImage:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4081;
 }
 
 /* Form Styles */
@@ -286,5 +326,9 @@ footer {
     .gallery img {
         max-width: 100%;
         width: 80px; /* Adjust size for mobile */
+    }
+
+    #gameImage {
+        width: 80px;
     }
 }

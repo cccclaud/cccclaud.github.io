@@ -14,6 +14,7 @@
                 <li><a href="#about" class="interactive">About</a></li>
                 <li><a href="#news" class="interactive">News</a></li>
                 <li><a href="#gallery" class="interactive">Gallery</a></li>
+                <li><a href="#game" class="interactive">Play Game</a></li>
                 <li><a href="#contact" class="interactive">Contact</a></li>
             </ul>
         </nav>
@@ -42,9 +43,14 @@
             <img src="/images/justinbieber/justin1.jpg" alt="Justin performing" class="interactive">
             <img src="/images/justinbieber/justin2.jpg" alt="Justin with fans" class="interactive">
             <img src="/images/justinbieber/justin3.jpg" alt="Justin on stage" class="interactive">
-            <img src="/images/justinbieber/justin4.jpg" alt="Justin 4" class="interactive">
-            <img src="/images/justinbieber/justin5.jpg" alt="Justin 5" class="interactive">
-            <img src="/images/justinbieber/justin6.jpg" alt="Justin 6" class="interactive">
+        </div>
+    </section>
+
+    <section id="game">
+        <h2>Catch the Bieber Game</h2>
+        <div id="gameArea">
+            <img src="/images/justinbieber/justin4.jpg" alt="Catch me!" id="gameImage">
+            <p id="score">Score: 0</p>
         </div>
     </section>
 
@@ -68,37 +74,6 @@
         <p>&copy; 2024 Justin Fanpage. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Animation on scroll
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            const scrollHandler = () => {
-                elements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                        el.classList.add('animated');
-                    }
-                });
-            };
-
-            window.addEventListener('scroll', scrollHandler);
-            scrollHandler(); // Trigger scrollHandler on page load
-
-            // Interactive color change on hover
-            const interactiveElements = document.querySelectorAll('.interactive');
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseover', () => {
-                    el.style.backgroundColor = '#ffeb3b';
-                    el.style.color = '#ff4081';
-                    el.style.transform = 'scale(1.1)';
-                });
-                el.addEventListener('mouseout', () => {
-                    el.style.backgroundColor = '';
-                    el.style.color = '';
-                    el.style.transform = 'scale(1)';
-                });
-            });
-        });
-    </script>
+    <script src="justin.js"></script>
 </body>
 </html>
