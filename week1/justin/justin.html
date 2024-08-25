@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin Fanpage</title>
+    <title>Justin Bieber Fanpage</title>
     <link rel="stylesheet" href="justin.css">
 </head>
 <body>
@@ -11,20 +11,20 @@
         <h1>Welcome to the Justin Fanpage</h1>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="interactive">About</a></li>
+                <li><a href="#news" class="interactive">News</a></li>
+                <li><a href="#gallery" class="interactive">Gallery</a></li>
+                <li><a href="#contact" class="interactive">Contact</a></li>
             </ul>
         </nav>
     </header>
     
-    <section id="about">
+    <section id="about" class="animate-on-scroll">
         <h2>About Justin</h2>
         <p>Justin Bieber is a Canadian singer and songwriter who gained fame with his debut single "Baby". Known for his catchy pop hits and impressive vocal range, Justin has become one of the most influential artists of his generation.</p>
     </section>
 
-    <section id="news">
+    <section id="news" class="animate-on-scroll">
         <h2>Latest News</h2>
         <article>
             <h3>New Album Release</h3>
@@ -36,16 +36,16 @@
         </article>
     </section>
 
-    <section id="gallery">
+    <section id="gallery" class="animate-on-scroll">
         <h2>Gallery</h2>
         <div class="gallery">
-            <img src="/images/justinbieber/justin1.jpg" alt="Justin performing">
-            <img src="/images/justinbieber/justin2.jpg" alt="Justin with fans">
-            <img src="/images/justinbieber/justin3.jpg" alt="Justin on stage">
+            <img src="/images/justinbieber/justin1.jpg" alt="Justin performing" class="interactive">
+            <img src="/images/justinbieber/justin2.jpg" alt="Justin with fans" class="interactive">
+            <img src="/images/justinbieber/justin3.jpg" alt="Justin on stage" class="interactive">
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="animate-on-scroll">
         <h2>Contact</h2>
         <form action="submit_form.php" method="post">
             <label for="name">Name:</label>
@@ -57,12 +57,45 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
             
-            <button type="submit">Send</button>
+            <button type="submit" class="interactive">Send</button>
         </form>
     </section>
 
     <footer>
         <p>&copy; 2024 Justin Fanpage. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation on scroll
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            const scrollHandler = () => {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        el.classList.add('animated');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', scrollHandler);
+            scrollHandler(); // Trigger scrollHandler on page load
+
+            // Interactive color change on hover
+            const interactiveElements = document.querySelectorAll('.interactive');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseover', () => {
+                    el.style.backgroundColor = '#ffeb3b';
+                    el.style.color = '#ff4081';
+                    el.style.transform = 'scale(1.1)';
+                });
+                el.addEventListener('mouseout', () => {
+                    el.style.backgroundColor = '';
+                    el.style.color = '';
+                    el.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
