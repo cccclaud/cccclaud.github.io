@@ -3,52 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin Bieber Fan Page</title>
-    <link rel="stylesheet" href="justin.css">
+    <title>Justin Fanpage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to the Justin Bieber Fan Page</h1>
+        <h1>Welcome to the Justin Fanpage</h1>
         <nav>
             <ul>
-                <li><a href="#bio">Biography</a></li>
-                <li><a href="#music">Music</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-
-    <section id="bio">
-        <h2>Biography</h2>
-        <p>Justin Bieber is a Canadian singer and songwriter. He gained fame with his debut single "Baby" and has since become a global pop sensation.</p>
+    
+    <section id="about">
+        <h2>About Justin</h2>
+        <p>Justin Bieber is a Canadian singer and songwriter who gained fame with his debut single "Baby". Known for his catchy pop hits and impressive vocal range, Justin has become one of the most influential artists of his generation.</p>
     </section>
 
-    <section id="music">
-        <h2>Music</h2>
-        <ul>
-            <li>"Baby" - 2010</li>
-            <li>"Sorry" - 2015</li>
-            <li>"Peaches" - 2021</li>
-        </ul>
+    <section id="news">
+        <h2>Latest News</h2>
+        <article>
+            <h3>New Album Release</h3>
+            <p>Justin has just released his latest album, and it's already topping the charts! Make sure to check out his new songs and stay tuned for upcoming tour dates.</p>
+        </article>
+        <article>
+            <h3>Upcoming Tour</h3>
+            <p>Justin is hitting the road again! His tour will start next month, and tickets are selling fast. Don't miss your chance to see him live!</p>
+        </article>
     </section>
 
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery">
-            <img src="/images/justinbieber/justin1.jpg" alt="Justin Bieber 1">
-            <img src="/images/justinbieber/justin2.jpg" alt="Justin Bieber 2">
-            <img src="/images/justinbieber/justin3.jpg" alt="Justin Bieber 3">
+            <img src="/images/justinbieber/justin1.jpg" alt="Justin performing">
+            <img src="/images/justinbieber/justin2.jpg" alt="Justin with fans">
+            <img src="/images/justinbieber/justin3.jpg" alt="Justin on stage">
         </div>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you have any questions or fan mail, please contact us at <a href="mailto:fanmail@justinbieber.com">fanmail@justinbieber.com</a>.</p>
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Justin Bieber Fan Page</p>
+        <p>&copy; 2024 Justin Fanpage. All rights reserved.</p>
     </footer>
 </body>
 </html>
