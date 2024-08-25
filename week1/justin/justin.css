@@ -4,13 +4,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ffeb3b, #ff4081);
+    background: radial-gradient(circle at top right, #ffeb3b, #ff4081);
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Header */
 header {
-    background: #ff4081; /* Bright pink for high energy */
+    background: rgba(255, 64, 129, 0.9); /* Semi-transparent pink */
     color: #fff;
     padding: 2rem 0;
     text-align: center;
@@ -23,7 +23,7 @@ header h1 {
     margin: 0;
     font-size: 3rem;
     font-weight: bold;
-    animation: slideIn 2s ease-out;
+    animation: slideIn 2s ease-out, textColorChange 5s infinite alternate;
 }
 
 /* Navigation */
@@ -63,7 +63,7 @@ section {
     padding: 3rem;
     margin: 1rem auto;
     max-width: 900px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -98,22 +98,44 @@ section h2:hover::before {
 
 /* Gallery */
 .gallery {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 0;
+    position: relative;
+    height: 300px; /* Set height to contain animated images */
+    overflow: hidden;
 }
 
 .gallery img {
-    width: 100%;
-    max-width: 320px;
+    position: absolute;
+    width: 100px;
     height: auto;
-    margin: 0.5rem;
     border: 5px solid #ff4081;
     border-radius: 12px;
+    animation: moveAround 10s infinite linear, fadeInOut 5s infinite alternate;
     transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery img:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.gallery img:nth-child(2) {
+    top: 20%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.gallery img:nth-child(3) {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 4s;
+}
+
+.gallery img:nth-child(4) {
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 6s;
 }
 
 .gallery img:hover {
@@ -186,6 +208,15 @@ footer {
     }
 }
 
+@keyframes textColorChange {
+    0% {
+        color: #ff4081;
+    }
+    100% {
+        color: #ffeb3b;
+    }
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -211,6 +242,33 @@ footer {
     }
 }
 
+@keyframes moveAround {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(200px, 100px);
+    }
+    50% {
+        transform: translate(100px, 200px);
+    }
+    75% {
+        transform: translate(-100px, 100px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
@@ -222,11 +280,11 @@ footer {
     }
     
     .gallery {
-        flex-direction: column;
-        align-items: center;
+        height: auto; /* Adjust height for mobile */
     }
     
     .gallery img {
-        max-width: 90%;
+        max-width: 100%;
+        width: 80px; /* Adjust size for mobile */
     }
 }
