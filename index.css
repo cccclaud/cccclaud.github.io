@@ -7,7 +7,7 @@ p
 
 h1
 {
-    color: pink;
+    color: rgba(255, 133, 224, 0.717);
 }
 
 img {
@@ -35,4 +35,8 @@ img {
 h2
 {
     color:darkmagenta;
+}
+
+body {
+    background-color: #fdecf9;
 }
