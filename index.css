@@ -1,19 +1,24 @@
 p
 {
-    width: 200px;
+    width:500px;
+    height: auto;
     border: 2px solid navy;
     background-color: antiquewhite;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
 }
 
 h1
 {
-    color: rgba(255, 133, 224, 0.717);
+    color: rgba(252, 123, 194, 0.717);
 }
 
 img {
-    max-width: 200px; /* Set the width to 200 pixels */
+    max-width: 300px; /* Set the width to 300 pixels */
     height: auto; /* Maintain the aspect ratio */
-    border: 2px dotted plum;
+    border: 3px solid plum;
+    border-radius: 4px;
 }
 
 .video-container {
