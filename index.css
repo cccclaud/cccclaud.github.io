@@ -2,8 +2,9 @@ p
 {
     width:500px;
     height: auto;
-    border: 2px solid navy;
-    background-color: antiquewhite;
+    border: 2px solid pink;
+    border-radius: 5px;
+    background:  linear-gradient(to right, #ff97d0d0, #ffdcb4, #ffcaccf2);;
     font-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
