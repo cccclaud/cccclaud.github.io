@@ -8,6 +8,7 @@ p
     font-size: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    margin: 0 auto;
 }
 
 h1
@@ -20,7 +21,10 @@ img {
     height: auto; /* Maintain the aspect ratio */
     border: 3px solid plum;
     border-radius: 4px;
+    display: block; /* Make the image a block-level element */
+    margin: 0 auto; /* Center the image horizontally */
 }
+
 
 .video-container {
     position: relative;
@@ -47,9 +51,10 @@ body {
     background: linear-gradient(#ffdff0, #d5e8ff, #fbffcf) ;
 }
 
-intr 
+.intr 
 {
 color:powderblue;
 font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-size: 25px;
+font-size: 23px;
+text-align:center;
 }
