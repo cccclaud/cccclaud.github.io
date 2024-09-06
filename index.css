@@ -11,7 +11,7 @@ p
     margin: 0 auto;
 }
 
-h1
+.pink
 {
     color: rgba(252, 123, 194, 0.717);
 }
@@ -42,7 +42,7 @@ img {
     height: 100%;
 }
 
-h2
+.purple
 {
     color:darkmagenta;
 }
