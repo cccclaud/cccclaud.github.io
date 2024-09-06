@@ -14,6 +14,14 @@ p
 .pink
 {
     color: rgba(252, 123, 194, 0.717);
+    font-size: 50px;
+}
+
+.red{
+    color: #cd626c;
+    margin-left: 20px;
+    font-size: 30px;
+    
 }
 
 img {
@@ -45,10 +53,21 @@ img {
 .purple
 {
     color:darkmagenta;
+    margin-left: 20px;
+    font-size: 30px;
 }
 
+.foodcaption{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: darksalmon;
+    font-size: 20px; 
+    margin-left: 20px;
+    text-align: center;
+}
+
+
 body {
-    background: linear-gradient(#ffdff0, #d5e8ff, #fbffcf) ;
+    background: linear-gradient(#ffdff0, #d5e8ff, #fae2ff) ;
 }
 
 .intr 
